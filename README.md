@@ -44,7 +44,7 @@ Place the CSV anywhere on disk; you will upload it via the UI.
 The frontend is a Streamlit app defined in `frontend.py`. Run it with:
 
 ```bash
-cd /Users/sunithv/Desktop/theAICommitee
+cd theAICommitee
 streamlit run frontend.py
 ```
 
