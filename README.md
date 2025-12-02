@@ -80,8 +80,10 @@ Once the Streamlit app is running:
    - **“Max Concurrent Rows”**: controls how many rows are processed in parallel. Higher values may be faster but can increase API usage and rate‑limit risk.
 
 5. **Pricing (fixed per model)**
-   - Open the **“Pricing (fixed per model)”** expander to view the assumed token prices used for metrics.
-   - For all three models, pricing is fixed at **$0.15 / 1M input tokens** and **$0.60 / 1M output tokens** and cannot be edited from the UI.
+   - Open the **"Pricing (fixed per model)"** expander to view the assumed token prices used for metrics.
+   - gpt-4o-mini pricing is fixed at 0.15 per 1M input tokens and 0.60 per 1M output tokens.
+   - o4-mini pricing is fixed at 1.10 per 1M input tokens and 4.40 per 1M output tokens.
+   - gpt-5 pricing is fixed at 2.50 per 1M input tokens and 10.00 per 1M output tokens.
 
 6. **Run the evaluation**
    - Click **“Run Evaluation”**.

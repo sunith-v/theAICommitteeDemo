@@ -194,11 +194,11 @@ def build_frontend():
             object-fit: contain;
         }
 
-        /* Orange focus outline for ALL input elements */
+        /* Focus outline for ALL input elements */
         input:focus, textarea:focus, [tabindex]:focus {
-            outline: 2px solid #ff8c00 !important;
+            outline: 2px solid #4a5e82 !important;
             outline-offset: 0px !important;
-            border-color: #ff8c00 !important;
+            border-color: #4a5e82 !important;
         }
         
         /* Text inputs and text areas */
@@ -208,8 +208,8 @@ def build_frontend():
         }
         .stTextInput > div > div > input:focus,
         .stTextArea > div > div > textarea:focus {
-            border-color: #ff8c00 !important;
-            box-shadow: 0 0 0 1px #ff8c00 !important;
+            border-color: #4a5e82 !important;
+            box-shadow: 0 0 0 1px #4a5e82 !important;
         }
 
         /* Selectbox - black background */
@@ -218,8 +218,8 @@ def build_frontend():
             color: #ffffff !important;
         }
         .stSelectbox > div > div:focus-within {
-            border-color: #ff8c00 !important;
-            box-shadow: 0 0 0 1px #ff8c00 !important;
+            border-color: #4a5e82 !important;
+            box-shadow: 0 0 0 1px #4a5e82 !important;
         }
         
         /* File Uploader - black background, white label text */
@@ -251,19 +251,19 @@ def build_frontend():
         }
         .stButton > button:focus,
         .stFormSubmitButton > button:focus {
-            box-shadow: 0 0 0 2px #ff8c00 !important;
+            box-shadow: 0 0 0 2px #4a5e82 !important;
         }
 
-        /* Slider - orange thumb and track */
+        /* Slider - dark themed thumb and track */
         .stSlider > div > div > div > div {
-            background-color: #ff8c00 !important;
+            background-color: #4a5e82 !important;
         }
         .stSlider [role="slider"] {
-            background-color: #ff8c00 !important;
-            border-color: #ff8c00 !important;
+            background-color: #4a5e82 !important;
+            border-color: #4a5e82 !important;
         }
         .stSlider > div > div > div:first-child {
-            background: linear-gradient(to right, #ff8c00 var(--value-percent, 50%), #3a4563 var(--value-percent, 50%)) !important;
+            background: linear-gradient(to right, #4a5e82 var(--value-percent, 50%), #3a4563 var(--value-percent, 50%)) !important;
         }
 
         /* Expander - black background */
@@ -301,8 +301,8 @@ def build_frontend():
             border: 1px solid #4a5e82 !important;
         }
         .stNumberInput > div > div > input:focus {
-            border-color: #ff8c00 !important;
-            box-shadow: 0 0 0 1px #ff8c00 !important;
+            border-color: #4a5e82 !important;
+            box-shadow: 0 0 0 1px #4a5e82 !important;
         }
         </style>
         """,
@@ -394,7 +394,7 @@ def build_frontend():
     with c3:
         model_choice = st.selectbox(
             "Model",
-            options=["gpt-4o-mini", "o4-mini", "GPT-5"],
+            options=["gpt-4o-mini", "o4-mini", "gpt-5"],
             index=0,
             help="Only these three models are tested; pricing is fixed per model.",
         )
@@ -412,10 +412,10 @@ def build_frontend():
     price_output = selected_pricing["output"] / 1_000_000
 
     with form.expander("Pricing (fixed per model)"):
-        st.write(
-            f"{model_choice} pricing is fixed at "
-            f"${selected_pricing['input']:.2f} per 1M input tokens "
-            f"and ${selected_pricing['output']:.2f} per 1M output tokens."
+        st.text(
+            f"gpt-4o-mini pricing is fixed at 0.15 per 1M input tokens and 0.60 per 1M output tokens.\n"
+            f"o4-mini pricing is fixed at 1.10 per 1M input tokens and 4.40 per 1M output tokens.\n"
+            f"gpt-5 pricing is fixed at 1.25 per 1M input tokens and 10.00 per 1M output tokens."
         )
 
 
